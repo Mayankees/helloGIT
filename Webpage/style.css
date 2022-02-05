@@ -1,0 +1,69 @@
+html {
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0px 80px 0px 80px;
+}
+.header ul {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.5rem;
+}
+
+a {
+  margin: 1rem;
+  text-decoration: none;
+}
+a:link,
+a:visited {
+  color: black;
+}
+
+li {
+  list-style: none;
+}
+
+.welcomeImg {
+  display: flex;
+  height: 100vh;
+  width: 60vw ;
+}
+
+.technologies {
+  display: flex;
+  justify-content: center;
+}
+
+.technologies div {
+  text-align: center;
+  align-self: center;
+  margin: 2%;
+}
+img [alt="BladeRunner"] {
+  height: 100vh;
+  width: 100vw;
+}
+img[alt="NFT"] {
+  width: 15vw;
+}
+img[alt="Blockchain"] {
+  width: 15vw;
+}
+img[alt="Metaverse"] {
+  width: 15vw;
+  padding: 3rem;
+}
+.footer {
+  background-color: black;
+  color: white;
+  text-align: center;
+  padding: 0.2rem;
+}
+.footer > p {
+  font-size: 1.3rem;
+  margin: 0.1rem;
+}
