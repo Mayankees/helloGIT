@@ -51,9 +51,10 @@ captainAmerica.steveQuotes(); //accessing method
 
 for (let key in captainAmerica){
     //key
-    console.log(key);
+    console.log(`${key} : ${captainAmerica[key]} : ${typeof captainAmerica[key]}`);
     //key variable contains values of key 
 
     // to access the binded value in key variable
-    console.log(captainAmerica[key]); //bracket notation 
+    // console.log(captainAmerica[key]); //bracket notation
+    // console.log(typeof captainAmerica[key]); 
 }
