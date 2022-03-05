@@ -4,15 +4,26 @@
 
 let obj ={};    //empty object
 console.log(obj);
-
+let food=[1,2,3,4];
 let person={
     // key : value
     name: "Mayank",
-    age: 25,
+    age: food[1],
     phone: 9999131313,
     gender: "Male",
     height: "172cm"
 };
+
+let mob=person.mob;
+mob='Vivo';
+console.log(person);
+console.log(mob);
+
+person.age=5;
+console.log(person.age);
+
+
+console.log(person.name);
 
 console.log(`Hi ${person.name}. 
 How are you?`);

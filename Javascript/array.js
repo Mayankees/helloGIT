@@ -2,6 +2,9 @@
 
 // Defining an array
 let cars=["BMW", "TATA", "Mercedes", 2022, 2023, 2024];
+var num=2;
+console.log(cars[(num+=1)]);
+console.log(cars.push(6)+" ok");
 
 // accessing array
 console.log(cars);
