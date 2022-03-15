@@ -47,17 +47,68 @@ function organize(srcPath) {
   //Reads the contents of the directory.-> basically reads the names of files present in directory
 
   let allFiles = fs.readdirSync(srcPath);
-  console.log(allFiles);
+  //   console.log(allFiles);
 
   //4.traverse over all the files and classify them on the basis of their extension (.pdf , .mp3)
   for (let i = 0; i < allFiles.length; i++) {
-    // let ext = allFiles[i].split(".")[1];
-    let ext = path.extname(allFiles[i]);
-    console.log(ext);
+    let ext = allFiles[i].split(".")[1];
+    // let ext = path.extname(allFiles[i]);
+    // console.log(ext);
+
+    let fullPathOfFile = path.join(srcPath, allFiles[i]);
+    // console.log(fullPathOfFile);
+
+    // 1. check if it is a file or folder
+    //lstatsync gives the information regarding the link provided ,
+    let isFile = fs.lstatSync(fullPathOfFile).isFile(); //true-> file hai to  or false-> agar folder h
+    // console.log(allFiles[i]+" is "+ isFile);
+
+    if (isFile) {
+      // 1.1 get folder from extension
+      let folderName = getFolderName(ext);
+      //1.3 copy from src folder (srcPath) and paste in dest folder (folder_name e.g. document, media etc)
+
+      //source    //filePath    //pasteTo
+      copyFilesToDest(srcPath, fullPathOfFile, folderName);
+    }
   }
+}
+
+function getFolderName(extension) {
+  for (const key in types) {
+    // console.log(key);
+    for (let i = 0; i < types[key].length; i++) {
+      if (types[key][i] == extension) {
+        return key;
+      }
+    }
+  }
+  return "miscellaneous";
+}
+
+function copyFilesToDest(srcPath, fullPathOfFile, folderName) {
+  //1. folderName ka path banana h
+  let destFolderPath = path.join(srcPath, "organized_files", folderName); //....../downloads/organized_files/archives
+  // console.log(destFolderPath);
+  //   2. check if folder exists, if not create one
+
+  if (!fs.existsSync(destFolderPath)) {
+    fs.mkdirSync(destFolderPath);
+  }
+
+  //  3. copy files from source to destination folder
+  let fileName = path.basename(fullPathOfFile);
+  let destFileName = path.join(destFolderPath, fileName);
+
+  // source       // destination
+  fs.copyFileSync(fullPathOfFile, destFileName);
 }
 
 let srcPath =
   "C:\\Users\\LethalProtector\\Desktop\\Mayank\\WebDev\\Node\\FileOrganiser\\downloads";
 
 organize(srcPath);
+
+module.exports = {
+  organize: organize,
+};

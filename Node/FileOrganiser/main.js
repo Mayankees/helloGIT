@@ -1,6 +1,7 @@
 // entry point of command line
 
-let helpFunc=require("./commands/help")
+let helpFunc=require("./commands/help");
+let orgFunc = require("./commands/organize")
 // helpFunc.help();
 // we have to slice I 2 data (node main.js) from the input array 
 let inputArr = process.argv.slice(2);
@@ -16,7 +17,8 @@ switch (command) {
             // console.log("Help command "+path);
         break;
     case "organize":            // call organize function organize files in their respective folder
-            console.log("Organize command "+path);
+            orgFunc.organize(path);
+            // console.log("Organize command "+path);
         break;
     default:
         console.log("Invalid command "+path);
