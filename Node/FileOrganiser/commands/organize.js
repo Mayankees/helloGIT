@@ -2,7 +2,8 @@
 const fs = require("fs");
 const path = require("path");
 let types = {
-  media: ["mp4", "mkv", "mp3"],
+  shortcuts: ["lnk"],
+  media: ["mp4", "mkv", "mp3", "wav"],
   archives: ["zip", "7z", "rar", "tar", "gz", "ar", "iso", "xz"],
   documents: [
     "docx",
@@ -39,6 +40,7 @@ function organize(srcPath) {
   if (!fs.existsSync(organizedFiles)) {
     fs.mkdirSync(organizedFiles);
   } else {
+    // fs.mkdirSync(organizedFiles+"-2");
     console.log("folder already exist");
   }
 
@@ -51,8 +53,8 @@ function organize(srcPath) {
 
   //4.traverse over all the files and classify them on the basis of their extension (.pdf , .mp3)
   for (let i = 0; i < allFiles.length; i++) {
-    let ext = allFiles[i].split(".")[1];
-    // let ext = path.extname(allFiles[i]);
+    // let ext = allFiles[i].split(".")[1];
+    let ext = path.extname(allFiles[i]);
     // console.log(ext);
 
     let fullPathOfFile = path.join(srcPath, allFiles[i]);
@@ -104,10 +106,10 @@ function copyFilesToDest(srcPath, fullPathOfFile, folderName) {
   fs.copyFileSync(fullPathOfFile, destFileName);
 }
 
-let srcPath =
-  "C:\\Users\\LethalProtector\\Desktop\\Mayank\\WebDev\\Node\\FileOrganiser\\downloads";
+// let srcPath =
+//   "C:\\Users\\LethalProtector\\Desktop\\Mayank\\WebDev\\Node\\FileOrganiser\\downloads";
 
-organize(srcPath);
+// organize(srcPath);
 
 module.exports = {
   organize: organize,
