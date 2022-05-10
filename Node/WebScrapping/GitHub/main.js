@@ -29,7 +29,7 @@ function getTopic(body) {
     const topic = links.split("/").pop();
     // console.log(topic);
     const fullTopicLinks = "https://github.com" + links;
-    // console.log(fullTopicLinks);
-    getRepository.repo(fullTopicLinks, topic);
+    console.log(fullTopicLinks);
+    // getRepository.repo(fullTopicLinks, topic);
   }
 }
