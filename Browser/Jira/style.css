@@ -16,6 +16,7 @@ body{
 
 .toolbox-cont>*{
     margin-left: 4rem;
+    border-radius: 0.5rem;
 }
 
 .toolbox-color-cont{
@@ -25,6 +26,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: space-evenly;
+    border-radius: 0.5rem;
 }
 
 .action-btn{
@@ -50,7 +52,7 @@ body{
 }
 
 .red{
-    background-color: lightblue;
+    background-color: #51bde4;
 }
 
 .black{
@@ -67,8 +69,8 @@ body{
     align-items: center;
 }
 
-.toolbox-color-cont>*:hover, .action-btn>*:hover{
-    background-color: #485460;
+.toolbox-color-cont>*:hover, .action-btn>*:hover, .priority-color-cont>*:hover{
+    background-color: #6d6e6acd;
 }
 
 .modal-cont{
@@ -76,9 +78,9 @@ body{
     width: 45vw;
     background-color: lightblue;
     position: absolute;
-    top: 25vh;
-    left: 30vw;
-    display: flex;
+    top: calc((100vh - 50vh) / 2);
+    left: calc((100vw - 45vw)/2);
+    display: none;
 }
 
 textarea{
@@ -89,6 +91,7 @@ textarea{
     outline: none;
     background-color: #d1d8e0;
     font-size: 2rem;
+    padding: 5%;
 }
 
 .priority-color-cont{
@@ -104,4 +107,53 @@ textarea{
 .priority-color{
     height: 10%;
     width: 50%;
+}
+
+.active{
+    border: 4px solid red;
+}
+
+.ticket-cont{
+    height: 14rem;
+    width: 15rem;
+    background-color: #f1f2f6;
+}
+
+.ticket-color{
+    height: 1rem;
+    /* background-color: black; */
+}
+
+.ticket-id{
+    height: 2rem;
+    background-color: lightcoral;
+    padding: 3%;
+    text-align: center;
+}
+
+.task-area{
+    height: calc(100% - 1rem - 2rem - 2.5rem);
+    font-size: 1.5rem;
+    outline: none;
+    overflow-wrap: break-word;
+    padding: 3%;
+    text-align: center;
+}
+
+.main-cont{
+    display: flex;
+    flex-wrap: wrap;
+    padding: 1rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.lock-cont{
+    /* height: 2rem; */
+    /* background-color: aqua; */
+    display: flex;
+    justify-content: end;
+    padding: 2.5%;
+    font-size: 1.5rem;
+    color: #84817a;
 }
