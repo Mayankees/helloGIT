@@ -75,20 +75,52 @@ console.log(ans);
 
 console.log(users.map((obj) => obj.firstName+" "+obj.lastName));
 
-// get the number of people with a particular age
-// function nOfPeopleWithAge(obj) {
-//   if()
-// }
+//write a code to get firstName of all the users with age less than 30
+var ans = users.filter((obj)=> obj.age<30);
+console.log(ans);
+var ans = ans.map(getfullName);
+console.log(ans);
 
+// chaining 
+console.log(
+  users.filter((obj)=>obj.age<30)
+  .map(getfullName)
+);
 
-// get firstName of all user with age less than 30 years
-function lessThan(obj) {
-
-  let age = obj.age;
-  if(age<30){
-    return obj.firstName;
+// using reduce
+function getByAge(arr, obj) {
+  if(obj.age<30){
+    arr.push(obj.firstName+" "+obj.lastName);
   }
+  return arr;
+}
+var ans = users.reduce(getByAge,[]);
+console.log(ans);
+
+// III
+// write a code to return the number of people with paricular age
+function peopleAge(rObj, cObj) {
+  let age = cObj.age;
+  if(rObj[age]){
+    rObj[age] = rObj[age]+1;
+  }
+  else{
+    rObj[age] = 1;
+  }
+  return rObj;
+}
+var obj = users.reduce(peopleAge, {});
+console.log(obj);
+
+
+Array.prototype.myMap = function (logic) {
+  let res = [];
+  for (let i = 0; i < this.length; i++) {
+    res.push(logic(this[i]));
+  }
+  return res;
 }
 
-var ans = users.map(lessThan);
-console.log(ans);
+console.log(arrL.myMap(area));
+console.log(arrL.myMap(peri));
+console.log(arrL.myMap(diagonal));

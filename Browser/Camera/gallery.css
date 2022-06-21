@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    /* background-color: rgba(181, 213, 213, 0.688); */
+}
+
+.main-cnt {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.media-cnt{
+    height: 15rem;
+    width: 15rem;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.media{
+    height: 75%;
+    width: 95%;
+    /* background-color: rgb(208, 0, 0); */
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.media > *{
+    height: 100%;
+    width: 100%;
+    object-fit: fill;
+    border-radius: 0.5rem 0.5rem 0 0;
+}
+
+.delete-btn-cnt{
+    height: 10%;
+    width: 95%;
+    background-color: rgb(17, 255, 0);
+    text-align: center;
+}
+
+.download-btn-cnt{
+    height: 10%;
+    width: 95%;
+    background-color: rgb(255, 255, 0);
+    text-align: center;
+    border-radius: 0 0 0.5rem 0.5rem;
+}
+
+.download-btn-cnt:hover, .delete-btn-cnt:hover{
+    cursor: pointer;
+}
+
+h4{
+    margin: 2%;
+    font-weight: bold;
+}
+
+.back-btn{
+    height: 5rem;
+    width: 5rem;
+    border-radius: 50%;
+    background-color: rgba(0, 255, 251, 0.89);
+    position: fixed;
+    bottom: 5vh;
+    right: 5vw;
+    box-shadow: rgba(0, 0, 0, 0.478) 0px 5px 15px;
+    font-size: 22px;
+    font-weight: bold;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-btn:hover{
+    cursor: pointer;
+}
+
+.threeD {
+    color: darkgrey;
+    white-space: nowrap;
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 3em;
+    font-family: sans-serif;
+    letter-spacing: 0.1em;
+    transition: 0.3s;
+    text-shadow: 1px 1px 0 grey, 1px 2px 0 grey, 1px 3px 0 grey, 1px 4px 0 grey,
+        1px 5px 0 grey, 1px 6px 0 grey, 1px 7px 0 grey, 1px 8px 0 grey,
+        5px 13px 15px black;
+}
+
+.threeD:hover {
+    transition: 0.3s;
+    transform: scale(1.1)translate(-50%, -50%);
+    text-shadow: 1px -1px 0 grey, 1px -2px 0 grey, 1px -3px 0 grey,
+        1px -4px 0 grey, 1px -5px 0 grey, 1px -6px 0 grey, 1px -7px 0 grey,
+        1px -8px 0 grey, 5px -13px 15px black, 5px -13px 25px #808080;
+}

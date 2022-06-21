@@ -12,11 +12,13 @@ body{
     background-color: rgba(48, 52, 52, 0.808);
     display: flex;
     align-items: center;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .toolbox-cont>*{
     margin-left: 4rem;
     border-radius: 0.5rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
 }
 
 .toolbox-color-cont{
@@ -41,6 +43,8 @@ body{
 .color{
     height: 1.5rem;
     width: 3rem;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px 0px 0px;
+    border-radius: 0.2rem;
 }
 
 .pink{
@@ -70,7 +74,9 @@ body{
 }
 
 .toolbox-color-cont>*:hover, .action-btn>*:hover, .priority-color-cont>*:hover{
-    background-color: #6d6e6acd;
+    /* background-color: #ffffff6e; */
+    opacity: 0.3;
+    border-radius: 0.3rem;
 }
 
 .modal-cont{
@@ -81,6 +87,8 @@ body{
     top: calc((100vh - 50vh) / 2);
     left: calc((100vw - 45vw)/2);
     display: none;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 0.5rem;
 }
 
 textarea{
@@ -92,6 +100,7 @@ textarea{
     background-color: #d1d8e0;
     font-size: 2rem;
     padding: 5%;
+    border-radius: 0.5rem 0rem 0rem 0.5rem;
 }
 
 .priority-color-cont{
@@ -102,31 +111,37 @@ textarea{
     flex-direction: column;    
     align-items: center;
     justify-content: space-evenly;
+    border-radius: 0rem 0.5rem 0.5rem 0rem;
 }
 
 .priority-color{
     height: 10%;
     width: 50%;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px 0px 0px;
+    border-radius: 0.2rem;
 }
 
 .active{
-    border: 4px solid red;
+    border: 2.5px solid rgb(235, 226, 226);
 }
 
 .ticket-cont{
     height: 14rem;
     width: 15rem;
     background-color: #f1f2f6;
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    border-radius: 0.5rem;
 }
 
 .ticket-color{
     height: 1rem;
+    border-radius: 0.5rem 0.5rem 0rem 0rem;
     /* background-color: black; */
 }
 
 .ticket-id{
     height: 2rem;
-    background-color: lightcoral;
+    background-color: rgba(48, 52, 52, 0.479);
     padding: 3%;
     text-align: center;
 }
