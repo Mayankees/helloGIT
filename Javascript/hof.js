@@ -8,7 +8,7 @@ let diag = function (arr) {
   //   return d;
 };
 
-console.log(diag(arr));
+// console.log(diag(arr));
 
 let area = function (a) {
   return a * a;
@@ -30,13 +30,65 @@ let calc = function (arr, logic) {
   return ans;
 };
 
-console.log(calc(arr, area));
-console.log(calc(arr, peri));
-console.log(calc(arr, diagonal));
+// console.log(calc(arr, area));
+// console.log(calc(arr, peri));
+// console.log(calc(arr, diagonal));
 
 
-// Map
+// Reduce
 
-let aarea = arr.map((a) => {
-  return a*a;
+// I
+// write a code to calculate largest element
+
+const arrL =[2,500,8,6,78,101];
+let largest = arrL.reduce((acc,num)=>{
+  if (acc<num) {
+    acc = num;
+  }
+  return acc;
 })
+// console.log(largest);
+
+function largestElem(max, curr) {
+  if (max<curr) {
+    max = curr;
+  }
+  return max;
+}
+
+let larg = arrL.reduce(largestElem, -Infinity);
+// console.log(larg);
+
+// II
+var users = [
+  { firstName: "Mayank", lastName: "Singh", age: 55 },
+  { firstName: "Jyoti", lastName: "Jauhari", age: 25 },
+  { firstName: "Saket", lastName: "Bharti", age: 15 },
+];
+
+// get fullName of users
+function getfullName(obj) {
+  return obj.firstName+" "+obj.lastName;
+}
+var ans = users.map(getfullName);
+console.log(ans);
+
+console.log(users.map((obj) => obj.firstName+" "+obj.lastName));
+
+// get the number of people with a particular age
+// function nOfPeopleWithAge(obj) {
+//   if()
+// }
+
+
+// get firstName of all user with age less than 30 years
+function lessThan(obj) {
+
+  let age = obj.age;
+  if(age<30){
+    return obj.firstName;
+  }
+}
+
+var ans = users.map(lessThan);
+console.log(ans);

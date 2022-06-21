@@ -300,4 +300,8 @@ console.log(num1);
 console.log(num2);
 */
 
-
+// Sort array with setTimeout
+let arr = [5, 44, 6, 8, 9, 1, 3, 77, 44, 55, 66, 25];
+for (const num of arr) {
+  setTimeout(() => console.log(num), num);
+}
