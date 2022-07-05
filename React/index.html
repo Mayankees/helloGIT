@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"
+    ></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="root">Hello</div>
+    <div id="root2"></div>
+  </body>
+  <script type="text/babel">
+    // let ele = document.createElement("h1");
+    // ele.innerText = "Hello";
+    // let root = document.getElementById("root");
+    // console.log(ele);
+    // root.appendChild(ele);
+
+    // react
+    // let elem = React.createElement("h1",{
+    //     children:["Hello"]
+    // })
+    // console.log(ele);
+    // let root = document.getElementById("root");
+    // ReactDOM.render(ele,root);
+
+    //jsx-> js+xml
+    // function component
+    function Element({ name = "???" }) {
+      return <h1>Hello {name} </h1>;
+    }
+
+    function Element2(props) {
+      console.log(props); //return object with key:pair value
+      return (
+        <div>
+          <h1>Hello {props.name}</h1>
+          <h1>from {props.city}</h1>
+        </div>
+      );
+    }
+
+    function Element3({ name = "Sparda's Son", city = "hell" }) {
+      return (
+        <React.Fragment>
+          <h1>Hello {name}</h1>
+          <h1>from {city}</h1>
+        </React.Fragment>
+      );
+    }
+
+    function Main() {
+      return (
+        <React.Fragment>
+          <Element />
+          <Element2 name="Dante" city="Heaven" />
+          <Element3 />
+          <Element />
+          <Element />
+        </React.Fragment>
+      );
+    }
+    ReactDOM.render(<Main />, document.getElementById("root"));
+    <br></br>;
+    ReactDOM.render(<Element3 />, document.getElementById("root2"));
+  </script>
+</html>
