@@ -1,0 +1,114 @@
+.App {
+  text-align: center;
+}
+
+.nav-bar{
+  display: flex;
+  background: rgb(2, 0, 36);
+    background: linear-gradient(180deg, rgba(2, 0, 36, 1) 0%, rgba(75, 75, 201, 1) 0%, rgba(0, 212, 255, 1) 100%);
+    color: black;
+    padding: 1rem;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.banner-card{
+  background-color:white;
+  width: 100%;
+}
+
+.banner-img{
+  height: 70vh;
+  width: 100%;
+}
+
+.banner-title{
+  position: absolute;
+  top:50vh;
+  left:5vw;
+  color:white;
+}
+
+.banner-text{
+  position: absolute;
+  top:55vh;
+  left:5vw;
+  color:white;
+}
+
+.movies-list{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 1rem;
+  justify-content: center;
+}
+
+.movie-card{
+  height: auto;
+  width: 15vw;
+  margin: 1rem;
+  color:white;
+  position: relative;
+  border: none;
+}
+
+.card-img{
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 2px 4px, rgba(0, 0, 0, 0.3) 0px 7px 13px -3px, rgba(0, 0, 0, 0.2) 0px -3px 0px inset;
+    margin-bottom: 0.5rem;
+}
+
+.movie-title{
+  color: black;
+  font-size: 1rem;
+  white-space: pre;
+}
+
+.movie-button{
+  position: absolute;
+  top:80%;
+}
+
+.button-wrapper{
+  display: flex;
+  justify-content: center;
+}
+
+.pagination{
+  display: flex;
+  justify-content: center;
+}
+
+.genre-list{
+  padding: 2rem;
+}
+
+.movies-table{
+  padding: 2rem;
+}
+
+@media screen and (max-width:400px) {
+  .banner-card{
+    height: 25vh;
+  }
+  .banner-img{
+    height: 30vh;
+  }
+  .banner-title{
+    top:12vh;
+    left:3vw;
+    font-size: smaller;
+  }
+  .banner-text{
+    font-size: x-small;
+    top:15vh;
+    left:3vw;
+  }
+  .movie-card{
+    height: 35vh;
+    width: 30vw;
+    margin: 1rem;
+  }
+  .movie-button{
+    width:80%;
+  }
+}
