@@ -16,11 +16,7 @@ export default class Favourites extends Component {
   }
 
   async componentDidMount() {
-    // let res = await axios.get(
-    //   `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=1`
-    // );
     let results = JSON.parse(localStorage.getItem("movies"));
-    // console.log(res.data.results);
     let genreId = {
       28: "Action",
       12: "Adventure",
@@ -43,16 +39,12 @@ export default class Favourites extends Component {
       37: "Western",
     };
     let genreArr = [];
-
     results.map((movieObj) => {
       if (!genreArr.includes(genreId[movieObj.genre_ids[0]])) {
         genreArr.push(genreId[movieObj.genre_ids[0]]);
       }
     });
-
     genreArr.unshift("All Genre");
-    // console.log(genreArr);
-
     this.setState({
       movies: [...results],
       genre: [...genreArr],
@@ -235,16 +227,16 @@ export default class Favourites extends Component {
                 }}
               ></input>
             </div>
-            <div className="row">
+            <div className="row ">
               <table className="table table-hover">
                 <thead>
                   <tr>
-                    <th scope="col" style={{ textAlign: "center" }}>
+                    <th scope="col" className="text-center">
                       Title
                     </th>
                     <th></th>
                     <th scope="col">Genre</th>
-                    <th scope="col">
+                    <th scope="col" className="text-center">
                       <i
                         class="fa-solid fa-sort-up"
                         onClick={this.sortByPopularityAsc}
@@ -255,7 +247,7 @@ export default class Favourites extends Component {
                         onClick={this.sortByPopularityDesc}
                       ></i>
                     </th>
-                    <th scope="col">
+                    <th scope="col" className="text-center">
                       <i
                         class="fa-solid fa-sort-up"
                         onClick={this.sortByRatingAsc}
@@ -272,7 +264,7 @@ export default class Favourites extends Component {
                 <tbody>
                   {filteredMovies.map((movieObj) => (
                     <tr>
-                      <td scope="row">
+                      <td scope="row" className="text-center">
                         <img
                           src={`https://image.tmdb.org/t/p/original${movieObj.poster_path}`}
                           style={{
@@ -285,8 +277,10 @@ export default class Favourites extends Component {
                       </td>
                       <td>{movieObj.original_title}</td>
                       <td>{genreId[movieObj.genre_ids[0]]}</td>
-                      <td>{movieObj.popularity}</td>
-                      <td>{movieObj.vote_average}</td>
+                      <td className="text-center">
+                        {parseFloat(movieObj.popularity).toFixed(1)}
+                      </td>
+                      <td className="text-center">{movieObj.vote_average}</td>
                       <td>
                         <button
                           className="btn btn-outline-danger"

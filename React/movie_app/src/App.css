@@ -60,7 +60,6 @@
 .movie-title{
   color: black;
   font-size: 1rem;
-  white-space: pre;
 }
 
 .movie-button{
@@ -84,6 +83,10 @@
 
 .movies-table{
   padding: 2rem;
+}
+
+.text-center{
+  text-align: center;
 }
 
 @media screen and (max-width:400px) {

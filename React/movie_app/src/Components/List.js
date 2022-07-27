@@ -11,16 +11,11 @@ export default class List extends Component {
       parr: [1],
       currPage: 1,
       movies: [],
-      favMovId: [],
+      favMovId: JSON.parse(localStorage.getItem("favMovId")) || [],
     };
   }
 
   handleEnter = (id) => {
-    // console.log(this.state.favMovId);
-    // console.log(id);
-    if(this.state.favMovId.includes(id)){
-      console.log(id + " id");
-    }
     this.setState({
       hover: id,
     });
@@ -80,40 +75,29 @@ export default class List extends Component {
 
   handleFavourites = (movieObj) => {
     let localStorageMovies = JSON.parse(localStorage.getItem("movies")) || [];
-
     if (this.state.favMovId.includes(movieObj.id)) {
       localStorageMovies = localStorageMovies.filter(
         (movie) => movie.id != movieObj.id
       );
     } else localStorageMovies.push(movieObj);
-    // console.log(localStorageMovies);
     localStorage.setItem("movies", JSON.stringify(localStorageMovies));
     let tempData = localStorageMovies.map((movieObj) => movieObj.id);
-    // console.log(tempData +" temp");
-    // console.log(this.state.favMovId);
+    localStorage.setItem("favMovId", JSON.stringify(tempData));
     this.setState({
       favMovId: [...tempData],
     });
-
-    // console.log(this.state.favMovId);
   };
 
   async componentDidMount() {
-    // console.log("componentDidMount is called");
     let res = await axios.get(
       `https://api.themoviedb.org/3/movie/popular?api_key=${api_key}&language=en-US&page=${this.state.currPage}`
     );
-    // console.log(res.data);
     this.setState({
       movies: [...res.data.results],
     });
   }
 
   render() {
-    // console.log("render is called");
-    // let movie = movies.results;
-    // let movie = [];
-    // console.log(movie);
     return (
       <>
         {this.state.movies.length == 0 ? (
