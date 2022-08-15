@@ -1,7 +1,13 @@
 // I - Create an obj with an array that gives the occurrence of each element in it:
-/*
-let arr = ["1", "2", "4", "1", "2", "3", "1", "2", "3", "4"];
+let ar = ["1", "2", "4", "1", "2", "3", "1", "2", "3", "4", "6", "-8"];
 // let ans = { '1': 5, '2': 3, '3': 2, '4': 2, '5': 5 };
+let ans = {};
+ar.map((num) => {
+  ans[num] = ans[num] == undefined ? 1 : ans[num] + 1;
+});
+console.log(ans);
+
+/*
 
 // Method 01
 let ans = {};
@@ -301,7 +307,7 @@ console.log(num2);
 */
 
 // Sort array with setTimeout
-let arr = [5, 44, 6, 8, 9, 1, 3, 77, 44, 55, 66, 25];
-for (const num of arr) {
-  setTimeout(() => console.log(num), num);
-}
+// let arr = [5, 44, 6, 8, 9, 1, 3, 77, 44, 55, 66, 25];
+// for (const num of arr) {
+//   setTimeout(() => console.log(num), num);
+// }

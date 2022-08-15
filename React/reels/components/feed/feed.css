@@ -1,0 +1,62 @@
+.feed-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-cont{
+    height: 90vh;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    border-radius: 3px;
+    overflow-y: scroll;
+    margin-top: 0.5rem;
+}
+
+.video-cont::-webkit-scrollbar{
+    display: none;
+}
+
+.post-cont{
+    height: 90vh;
+    width: 470px;
+    border: 1px solid red;
+    border-radius: 3px;
+}
+
+.post-cont>video{
+    height: 100%;
+    width: 470px;
+    object-fit: contain;
+    background-color: lightblue;
+    border-radius: 3px;
+    position: relative;
+}
+
+.video-info{
+    /* display: flex; */
+    height: 20%;
+    display: flex;
+    justify-content: space-between;
+    margin: 0 1rem 0 1rem ;
+    z-index: 1;
+    position: relative;
+    bottom: 10vh;
+}
+
+.avatar-cont{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+.post-like{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

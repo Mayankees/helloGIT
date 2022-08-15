@@ -1,0 +1,44 @@
+.login-cont {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    text-align: center;
+    flex-direction: row;
+}
+
+.login-card {
+    width: 22rem;
+    height: 18rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2.0rem;
+}
+
+.login-bottom-card {
+    width: 22rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+}
+
+.reset {
+    font-size: small;
+    margin-top: 0.5rem;
+    color: #00376b;
+}
+
+.insta-login-bg{
+    background-image: url('../../assets/InstaLoginBg.png');
+    height: 618px;
+    width:454px;
+    position: relative;
+}
+
+.carousel{
+    position: absolute;
+    top: 3.1rem;
+    left: 1.36rem;
+}

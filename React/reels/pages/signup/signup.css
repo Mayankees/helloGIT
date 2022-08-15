@@ -1,0 +1,31 @@
+.signup-cont{
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 8rem;
+    text-align: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.signup-card{
+    width: 25rem;
+    height: 25rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 2.5rem;
+}
+
+.bottom-card {
+    width: 25rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 1rem;
+}
+
+.tnc{
+    font-size: small;
+    margin-top: 0.5rem;
+    color: grey;
+}

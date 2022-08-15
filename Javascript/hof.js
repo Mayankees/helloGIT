@@ -34,23 +34,22 @@ let calc = function (arr, logic) {
 // console.log(calc(arr, peri));
 // console.log(calc(arr, diagonal));
 
-
 // Reduce
 
 // I
 // write a code to calculate largest element
 
-const arrL =[2,500,8,6,78,101];
-let largest = arrL.reduce((acc,num)=>{
-  if (acc<num) {
+const arrL = [2, 500, 8, 6, 78, 101];
+let largest = arrL.reduce((acc, num) => {
+  if (acc < num) {
     acc = num;
   }
   return acc;
-})
+});
 // console.log(largest);
 
 function largestElem(max, curr) {
-  if (max<curr) {
+  if (max < curr) {
     max = curr;
   }
   return max;
@@ -68,43 +67,39 @@ var users = [
 
 // get fullName of users
 function getfullName(obj) {
-  return obj.firstName+" "+obj.lastName;
+  return obj.firstName + " " + obj.lastName;
 }
 var ans = users.map(getfullName);
 console.log(ans);
 
-console.log(users.map((obj) => obj.firstName+" "+obj.lastName));
+console.log(users.map((obj) => obj.firstName + " " + obj.lastName));
 
 //write a code to get firstName of all the users with age less than 30
-var ans = users.filter((obj)=> obj.age<30);
+var ans = users.filter((obj) => obj.age < 30);
 console.log(ans);
 var ans = ans.map(getfullName);
 console.log(ans);
 
-// chaining 
-console.log(
-  users.filter((obj)=>obj.age<30)
-  .map(getfullName)
-);
+// chaining
+console.log(users.filter((obj) => obj.age < 30).map(getfullName));
 
 // using reduce
 function getByAge(arr, obj) {
-  if(obj.age<30){
-    arr.push(obj.firstName+" "+obj.lastName);
+  if (obj.age < 30) {
+    arr.push(obj.firstName + " " + obj.lastName);
   }
   return arr;
 }
-var ans = users.reduce(getByAge,[]);
+var ans = users.reduce(getByAge, []);
 console.log(ans);
 
 // III
 // write a code to return the number of people with paricular age
 function peopleAge(rObj, cObj) {
   let age = cObj.age;
-  if(rObj[age]){
-    rObj[age] = rObj[age]+1;
-  }
-  else{
+  if (rObj[age]) {
+    rObj[age] = rObj[age] + 1;
+  } else {
     rObj[age] = 1;
   }
   return rObj;
@@ -112,15 +107,21 @@ function peopleAge(rObj, cObj) {
 var obj = users.reduce(peopleAge, {});
 console.log(obj);
 
-
 Array.prototype.myMap = function (logic) {
   let res = [];
   for (let i = 0; i < this.length; i++) {
     res.push(logic(this[i]));
   }
   return res;
-}
+};
 
 console.log(arrL.myMap(area));
 console.log(arrL.myMap(peri));
 console.log(arrL.myMap(diagonal));
+var ans = arrL.myMap(function (num) {
+  return 3 * num;
+});
+console.log(ans);
+
+Array.prototype.mySize = 8;
+console.log(arrL.mySize);
